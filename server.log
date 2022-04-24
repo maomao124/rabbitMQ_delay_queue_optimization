@@ -1,0 +1,40 @@
+2022-04-24 17:31:44.136  INFO 5984 --- [main] abbitMqDelayQueueOptimizationApplication : Starting RabbitMqDelayQueueOptimizationApplication using Java 16.0.2 on mao with PID 5984 (H:\程序\大三下期\rabbitMQ延迟队列优化\target\classes started by mao in H:\程序\大三下期\rabbitMQ延迟队列优化)
+2022-04-24 17:31:44.138 DEBUG 5984 --- [main] abbitMqDelayQueueOptimizationApplication : Running with Spring Boot v2.6.7, Spring v5.3.19
+2022-04-24 17:31:44.138  INFO 5984 --- [main] abbitMqDelayQueueOptimizationApplication : The following 1 profile is active: "dev"
+2022-04-24 17:31:44.792  INFO 5984 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-04-24 17:31:44.799  INFO 5984 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-04-24 17:31:44.799  INFO 5984 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.62]
+2022-04-24 17:31:44.871  INFO 5984 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-04-24 17:31:44.871  INFO 5984 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 693 ms
+2022-04-24 17:31:45.317  INFO 5984 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-04-24 17:31:45.319  INFO 5984 --- [main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [127.0.0.1:5672]
+2022-04-24 17:31:45.337  INFO 5984 --- [main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#3e67f5f2:0/SimpleConnection@4eaf7902 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 50906]
+2022-04-24 17:31:45.340  INFO 5984 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable or auto-delete Exchange (X) durable:false, auto-delete:false. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+2022-04-24 17:31:45.340  INFO 5984 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable or auto-delete Exchange (Y) durable:false, auto-delete:false. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+2022-04-24 17:31:45.340  INFO 5984 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (QA) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2022-04-24 17:31:45.340  INFO 5984 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (QB) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2022-04-24 17:31:45.341  INFO 5984 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (QD) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2022-04-24 17:31:45.341  INFO 5984 --- [main] o.s.amqp.rabbit.core.RabbitAdmin         : Auto-declaring a non-durable, auto-delete, or exclusive Queue (QC) durable:false, auto-delete:false, exclusive:false. It will be redeclared if the broker stops and is restarted while the connection factory is alive, but all messages will be lost.
+2022-04-24 17:31:45.379  INFO 5984 --- [main] abbitMqDelayQueueOptimizationApplication : Started RabbitMqDelayQueueOptimizationApplication in 1.567 seconds (JVM running for 2.121)
+2022-04-24 17:32:14.506  INFO 5984 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-24 17:32:14.506  INFO 5984 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-04-24 17:32:14.507  INFO 5984 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-04-24 17:32:14.527  INFO 5984 --- [http-nio-8080-exec-1] m.r.controller.MyController              : 开始发送消息(XC)：1
+2022-04-24 17:32:19.333  INFO 5984 --- [http-nio-8080-exec-2] m.r.controller.MyController              : 开始发送消息(XB)：2
+2022-04-24 17:32:24.542  INFO 5984 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] m.r.consumer.Consumer1                   : 接收到消息：延迟10秒：1
+2022-04-24 17:32:49.345  INFO 5984 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] m.r.consumer.Consumer1                   : 接收到消息：2
+2022-04-24 17:33:59.938  INFO 5984 --- [http-nio-8080-exec-5] m.r.controller.MyController              : 开始发送消息(XB)：4
+2022-04-24 17:34:07.066  INFO 5984 --- [http-nio-8080-exec-6] m.r.controller.MyController              : 开始发送消息(XA)：6
+2022-04-24 17:34:17.074  INFO 5984 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] m.r.consumer.Consumer1                   : 接收到消息：6
+2022-04-24 17:34:29.942  INFO 5984 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] m.r.consumer.Consumer1                   : 接收到消息：4
+2022-04-24 17:34:58.746  INFO 5984 --- [http-nio-8080-exec-7] m.r.controller.MyController              : 开始发送消息(XC)：3
+2022-04-24 17:35:03.166  INFO 5984 --- [http-nio-8080-exec-9] m.r.controller.MyController              : 开始发送消息(XC)：4
+2022-04-24 17:35:08.754  INFO 5984 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] m.r.consumer.Consumer1                   : 接收到消息：延迟10秒：3
+2022-04-24 17:35:33.171  INFO 5984 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] m.r.consumer.Consumer1                   : 接收到消息：延迟30秒：4
+2022-04-24 17:36:22.570  INFO 5984 --- [http-nio-8080-exec-2] m.r.controller.MyController              : 开始发送消息(XC)：6
+2022-04-24 17:36:26.965  INFO 5984 --- [http-nio-8080-exec-3] m.r.controller.MyController              : 开始发送消息(XC)：8
+2022-04-24 17:36:52.582  INFO 5984 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] m.r.consumer.Consumer1                   : 接收到消息：延迟30秒：6
+2022-04-24 17:36:52.582  INFO 5984 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] m.r.consumer.Consumer1                   : 接收到消息：延迟10秒：8
+2022-04-24 17:38:16.350  INFO 5984 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2022-04-24 17:38:16.377  INFO 5984 --- [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2022-04-24 17:38:16.399  INFO 5984 --- [SpringApplicationShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is already stopped
