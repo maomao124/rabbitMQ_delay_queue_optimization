@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: mao.rabbitmq_delay_queue_optimization.RabbitMqDelayQueueOptimizationApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.319 s - in mao.rabbitmq_delay_queue_optimization.RabbitMqDelayQueueOptimizationApplicationTests
